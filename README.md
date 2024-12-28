@@ -83,8 +83,17 @@ npm run dev:electron
 
     ![alt text](README-imgs/typescrip-setup-for-electron.png)
 
-* 
+* Create a new `tsconfig.json` file for the electron ( create it inside the `src/electron` folder ). 
 
+    ![alt text](README-imgs/tsconfig-json-for-electron.png)
+
+* Update `package.json` for setup electron with typescript ( adding `transpile:electron` part and resetting `main` in `package.json` ).
+
+    ![alt text](README-imgs/reupdate-pakage-json-for-setup-electron-with-typescript.png)
+
+* Update `.gitignore` with electron output `dis-electron`.
+
+    ![alt text](README-imgs/update-gitignore-with-electron-outputs.png)
 
 
 
