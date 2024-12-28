@@ -95,13 +95,40 @@ npm run dev:electron
 
     ![alt text](README-imgs/update-gitignore-with-electron-outputs.png)
 
+<br><br>
 
+## Setup electron builder
+* Install electron builder.
+    ```cmd
+    npm install --save-dev electron-builder
+    ```
 
+* Create and setup `electron-builder.json` configs also it should create in the project root ( `\` ) and add the desktop icon `.png` ( `desktop Icon.png` ) to avoid windows build errors.
 
+    ![alt text](README-imgs/electron-builder-and-destop-icon-setup-in-root.png)
+    ![alt text](README-imgs/electron-builder-json-setup.png)
 
+* Update `package.json` to build an electron desktop app for a specific OS and update `"main": "dist-electron/main.js"` this `main` value with `main.js.
+* Also, you must run the build command in administrator mode and make sure you are targeting the system you are using right now. 
 
+    ![alt text](README-imgs/electon-destop-app-builder-configs-setup-for-packege-json.png)
 
+* Run specific commands that work for your OS.
 
+    Windows
+    ```cmd
+    npm run dist:win
+    ```
+
+    Mac OS
+    ```cmd
+    npm run dist:mac
+    ```
+
+    Linux
+    ```cmd
+    npm run dist:linux
+    ```
 
 
 
