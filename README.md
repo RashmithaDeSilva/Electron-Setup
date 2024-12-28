@@ -130,10 +130,51 @@ npm run dev:electron
     npm run dist:linux
     ```
 
+<br><br>
 
+## Setup dev env
+* Setup vite HMR ( Hot Module Reloading ) for development and pre-build application in production.
 
+    ```cmd
+    npm install --save-dev cross-env
+    ```
 
+* Update the `package.json` file with `"dev:electron"` command.
 
+    ![alt text](README-imgs/dev-electron-update-with-cross-env.png)
 
+* Add this function to create a new file called `util.ts` inside the `src/electron` folder.
+
+    ![alt text](README-imgs/util-function-for-check-env.png)
+
+* Set up the HMR ( Hot Module Reloading ) server updating the `vite.config.ts` file and setting the `.env` file for configer `DEV_PORT`.
+
+    ```cmd
+    npm install --save-dev dotenv
+    ```
+
+    ![alt text](README-imgs/env-with-dev-port.png)
+
+    ![alt text](README-imgs/setup-HRM-server.png)
+
+* Update the `main.ts` file in the `src/electron` folder to setup and run dev mode and production using `.env` to get `DEV_PORT`.
+
+    ![alt text](README-imgs/electron-main-ts-update-with-dev-and-prod-modes.png)
+
+* Install `npm-run-all` to run the electron app and web app same time in dev mode.
+
+    ```cmd
+    npm install --save-dev npm-run-all
+    ```
+
+* Update the `package.json` file to set up `npm-run-all` by changing `dev:electron` and adding `dev`.
+
+    ![alt text](README-imgs/update-package-json-with-adding-npm-run-all.png)
+
+    ```cmd
+    npm run dev
+    ```
+
+    ![alt text](README-imgs/dev-mode-run-both-app-using-npm-run-all.png)
 
 
